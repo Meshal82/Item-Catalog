@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content%}
+<div class="mdl-grid mdl-shadow--2dp form-grid mdl-color--white margin-top-10">
+        <form action="{{url_for('newCar')}}" class="car-form" method="post" id="carForm">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text margin-top-5">
+            <input class="mdl-textfield__input" type="text" name="name" id="carname">
+            <label class="mdl-textfield__label" for="name">Car Name</label>
+          </div>
+          
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text">
+            <input class="mdl-textfield__input" type="text" name="carImage" id="picture">
+            <label class="mdl-textfield__label" for="carImage">car picture</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label input-field-text">
+            <textarea class="mdl-textfield__input" type="text"  name="carDescription" id="description"> </textarea>
+            <label class="mdl-textfield__label" for="carDescription">Description</label>
+          </div>
+
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth input-field-text">
+
+            <input class="mdl-textfield__input" type="text" name="category" id="category" value="" readonly tabIndex="-1">
+            <input type="hidden" value="" name="category">
+            <label for="category" class="mdl-textfield__label">Car Type</label>
+            <ul for="category" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                <li class="mdl-menu__item">Sport</li>
+                <li class="mdl-menu__item">Sedan</li>
+                <li class="mdl-menu__item">SUV</li>
+                <li class="mdl-menu__item">Truck</li>
+                <li class="mdl-menu__item">Other</li>
+            </ul>
+            </div>
+
+        <br>
+        <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent input-button mdl-color--teal" type="button" onclick="validateDetails()" value="Create">
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--grey-300 input-button" href="{{url_for('showCars')}}">Cancel</a>
+
+      </form>
+</div>
+{% endblock %}
+
+
+
+
+
+
